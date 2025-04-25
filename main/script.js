@@ -3,7 +3,7 @@ const board = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let gameActive = true;
 
-const winningConditions = [
+const condicoesDeVitoria = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -14,55 +14,55 @@ const winningConditions = [
     [2, 4, 6],
 ];
 
-function handleCellPlayed(cellIndex) {
-    board[cellIndex] = currentPlayer;
+function jogarNaCelula(indiceCelula) {
+    tabuleiro[indiceCelula] = jogadorAtual;
 }
 
-function handlePlayerChange() {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+function mudarJogador() {
+    jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X';
 }
 
-function checkWinner() {
-    for (let condition of winningConditions) {
-        const [a, b, c] = condition;
-        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+function verificarVencedor() {
+    for (let condicao of condicoesDeVitoria) {
+        const [a, b, c] = condicao;
+        if (tabuleiro[a] && tabuleiro[a] === tabuleiro[b] && tabuleiro[a] === tabuleiro[c]) {
             return true;
         }
     }
     return false;
 }
 
-function checkDraw() {
-    return board.every(cell => cell !== '');
+function verificarEmpate() {
+    return tabuleiro.every(celula => celula !== '');
 }
 
-function handleResultValidation() {
-    if (checkWinner()) {
-        alert(`Player ${currentPlayer} wins!`);
-        gameActive = false;
-    } else if (checkDraw()) {
-        alert('Game is a draw!');
-        gameActive = false;
+function validarResultado() {
+    if (verificarVencedor()) {
+        alert(`Jogador ${jogadorAtual} venceu!`);
+        jogoAtivo = false;
+    } else if (verificarEmpate()) {
+        alert('O jogo empatou!');
+        jogoAtivo = false;
     }
 }
 
-function handleCellClick(cellIndex) {
-    if (board[cellIndex] !== '' || !gameActive) return;
+function clicarNaCelula(indiceCelula) {
+    if (tabuleiro[indiceCelula] !== '' || !jogoAtivo) return;
 
-    handleCellPlayed(cellIndex);
-    handleResultValidation();
+    jogarNaCelula(indiceCelula);
+    validarResultado();
 
-    if (gameActive) {
-        handlePlayerChange();
+    if (jogoAtivo) {
+        mudarJogador();
     }
 }
 
-function restartGame() {
-    board.fill('');
-    currentPlayer = 'X';
-    gameActive = true;
-    alert('Game restarted!');
+function reiniciarJogo() {
+    tabuleiro.fill('');
+    jogadorAtual = 'X';
+    jogoAtivo = true;
+    alert('Jogo reiniciado!');
 }
 
-// Example usage: Call handleCellClick(index) when a cell is clicked
-// Call restartGame() to reset the game
+// Exemplo de uso: Chame clicarNaCelula(indice) quando uma célula for clicada
+// Chame reiniciarJogo() para reiniciar o jogo
