@@ -45,8 +45,5 @@ async function investimentoSelic() {
       contadorDeMes++;
       meses--;
     }
-  
-    console.log(`Você guardou R$${guardou}`);
-    const rendeu = saldo - guardou;
-    console.log(`Rendeu R$${rendeu.toFixed(2)}`);
+    document.getElementById("selic").innerText = `Você guardou R$${guardou.toFixed(2).replace('.', ',')} e rendeu R$${rendeu.toFixed(2).replace('.', ',')}`;
 }
