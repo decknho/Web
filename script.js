@@ -49,7 +49,4 @@ async function investimentoSelic() {
     console.log(`Você guardou R$${guardou}`);
     const rendeu = saldo - guardou;
     console.log(`Rendeu R$${rendeu.toFixed(2)}`);
-  }
-  
-  // Rodar a função
-  investimentoSelic();
+}
