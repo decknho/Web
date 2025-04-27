@@ -25,8 +25,6 @@ async function investimentoSelic() {
     let mes_extenso = selic[selic.length - 1].data;
     mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
     
-    console.log(`${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`);
-  
     const saldoMensal = parseFloat(prompt("Quantos reais por mês você pretende investir?"));
     const anos = parseInt(prompt("Quantidade de anos que você pretende investir?"));
     
@@ -45,5 +43,6 @@ async function investimentoSelic() {
       contadorDeMes++;
       meses--;
     }
+    document.getElementById("valor_selic").innerText = `${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
     document.getElementById("selic").innerText = `Você guardou R$${guardou.toFixed(2).replace('.', ',')} e rendeu R$${rendeu.toFixed(2).replace('.', ',')}`;
 }
