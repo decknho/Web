@@ -9,53 +9,45 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Meu Portfólio</h1>
-        <nav>
-            <a href="#sobre">Sobre mim</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+    <div style="height: 100dvh;;">
+        <div class="header" id="header">
+            <h1>Meu Portfólio</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre mim</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
 
-    <section id="sobre">
-        <h2>Sobre mim</h2>
-        <p>
-            Sou um estudante de programação atualmente no 3° semestre (na data de 09/02/2025). Tenho experiência em algumas linguagens de programação e técnologias, sempre buscando aprender e me aperfeiçoar para enfrentar novos desafios no mundo do desenvolvimento de software..
-        </p>
-    </section>
-    <hr>
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <p>
-            Aqui estão alguns dos projetos que desenvolvi até agora enquanto estudante, cada um deles representa uma etapa importante na minha jornada de aprendizado e crescimento como programador.
-        </p>
-        <h3 style="text-align: center;">
-            <hr>
-            Jogo da velha
-            <hr>
-        </h3>
-        <p>Em breve...</p>
-        <h3 style="text-align: center;">
-            <hr>
-            Gerador de senhas
-            <hr>
-        </h3>
-        <p>Em breve...</p>
-        <h3 style="text-align: center;">
-            <hr>
-            Cálculo de rendimentos de selic com API
-            <hr>
-        </h3>
-        <p>Em breve...</p>
-    </section>
-    <hr>
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Se você quiser entrar em contato, sinta-se à vontade para me enviar um e-mail para <a href="mailto:deckhho@hotmail.com">deckhho@hotmail.com</a>.</p>
-    </section>
-    <footer>
-        <p>&copy; TODOS OS DIREITOS RESERVADOS</p>
-    </footer>
+        <div id="sobre">
+            <h2>Sobre mim</h2>
+            <p>
+                Sou um estudante de programação atualmente no 3° semestre (na data de 09/02/2025). Tenho experiência em algumas linguagens de programação e técnologias, sempre buscando aprender e me aperfeiçoar para enfrentar novos desafios no mundo do desenvolvimento de software..
+            </p>
+        </div>
+
+        <hr>
+        <div id="projetos">
+            <h2>Projetos</h2>
+            <p>
+                Aqui estão alguns dos projetos que desenvolvi até agora enquanto estudante, cada um deles representa uma etapa importante na minha jornada de aprendizado e crescimento como programador.
+            </p>
+            <div class="linhaunica">
+                <h3>Jogo da velha </h3>
+                <h3><a href="geradordesenha.html">Gerador de senha</a></h3>
+                <h3>Selic com API</h3>
+            </div>
+        </div>
+        <hr>
+        <div id="contato">
+            <h2>Contato</h2>
+            <p>Se você quiser entrar em contato, sinta-se à vontade para me enviar um e-mail para <a href="mailto:deckhho@hotmail.com">deckhho@hotmail.com</a>.</p>
+        </div>
+
+        <div id="footer">
+            <p class="footer">&copy; Todos os direitos reservados.</p>
+        </div>
+    </div>
 </body>
 </html>
