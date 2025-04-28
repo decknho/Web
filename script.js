@@ -25,7 +25,7 @@ async function investimentoSelic() {
     let mes_extenso = selic[selic.length - 1].data;
     mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
     
-    console.log(`${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`);
+    //console.log(`${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`);
 
     const saldoInicial = parseFloat(prompt("Qual o valor inicial que você tem?"));
     const saldoMensal = parseFloat(prompt("Quantos reais por mês você pretende investir?"));
@@ -37,16 +37,14 @@ async function investimentoSelic() {
     let contadorDeMes = 2;
     const guardou = saldoMensal * meses;
   
-    document.getElementById("valor_investido").innerText = `Com saldo inicial de R$${saldoInicial.toFixed(2).replace('.', ',')} guardando R$${saldoMensal.toFixed(2).replace('.', ',')} por mês durante ${anos} anos, você terá:`;
-  
     while (meses !== 1) {
       saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
-      console.log(`${contadorDeMes}° MÊS R$${saldo.toFixed(2).replace('.', ',')}`);
+      //console.log(`${contadorDeMes}° MÊS R$${saldo.toFixed(2).replace('.', ',')}`);
       contadorDeMes++;
       meses--;
     }
-  
-    document.getElementById("valor_selic").innerText = `Você guardou R$${guardou}`;
+
     const rendeu = saldo - guardou;
-    document.getElementById("selic").innerText = `Rendeu R$${rendeu.toFixed(2)}`;
+
+    document.getElementById("resultado").innerText = `Após ${anos} anos, você terá R$${saldo.toFixed(2).replace('.', ',')}, com um rendimento de R$${rendeu.toFixed(2).replace('.', ',')}.`;
 }
