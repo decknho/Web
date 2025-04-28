@@ -6,20 +6,24 @@
     <title>Selic</title>
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+
 <body>
     <nav style="text-align: right; margin-right: 10px;"><a href="index.html">Início</a></nav>
 
     <div class="header">
         <h1>Selic</h1>
-        <div class="sombras" id="gerador_de_senhas">
+        <div class="sombras" id="selic_com_api">
             <div>
                 <p class=" texto_meio">Calculo de investimento em Selic</p>
             </div>
             
             <div>
-                <button id="sla" onclick="sla()">Sla</button>
-                <p class="texto_meio" id="valor-investido"></p>
+                <button id="botao" onclick="investimentoSelic()">Calcular</button>
+                <p class="texto_meio" id="valor_investido"></p>
+                <p class="texto_meio" id="valor_selic"></p>
+                <p class="texto_meio" id="selic"></p>
             </div>
         </div>
     </div>
