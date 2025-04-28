@@ -28,6 +28,11 @@ async function investimentoSelic() {
     //console.log(`${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`);
 
     const saldoInicial = parseFloat(prompt("Qual o valor inicial que você tem?"));
+    if (saldoInicial == 0) {
+      let textoFinal = "nenhum valor";
+    } else {
+      let textoFinal = `R$${saldoInicial.toFixed(2).replace('.', ',')}`;
+    }
     const saldoMensal = parseFloat(prompt("Quantos reais por mês você pretende investir?"));
     const anos = parseInt(prompt("Quantidade de anos que você pretende investir?"));
     
@@ -46,5 +51,5 @@ async function investimentoSelic() {
 
     const rendeu = saldo - guardou;
 
-    document.getElementById("resultado").innerText = `Após ${anos} anos, você terá R$${saldo.toFixed(2).replace('.', ',')}, com um rendimento de R$${rendeu.toFixed(2).replace('.', ',')}.`;
+    document.getElementById("resultado").innerText = `Começando com ${textoFinal} após ${anos} anos, você terá R$${saldo.toFixed(2).replace('.', ',')}, com um rendimento de R$${rendeu.toFixed(2).replace('.', ',')}.`;
 }
