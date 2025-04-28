@@ -48,6 +48,6 @@ async function investimentoSelic() {
 
   const rendeu = saldo - guardou;
 
-  document.getElementById("resultado").innerText = `${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
+  document.getElementById("info").innerText = `${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
   document.getElementById("resultado").innerText = `Começando com ${textoFinal} após ${anos} anos, você terá R$${saldo.toFixed(2).replace('.', ',')}, com um rendimento de R$${rendeu.toFixed(2).replace('.', ',')}.`;
 }
