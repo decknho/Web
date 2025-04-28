@@ -26,11 +26,7 @@ async function investimentoSelic() {
   mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
 
   const saldoInicial = parseFloat(prompt("Qual o valor inicial que você tem?"));
-  if (saldoInicial == 0) {
-    let textoFinal = "nenhum valor";
-  } else {
-    let textoFinal = `R$${saldoInicial.toFixed(2).replace('.', ',')}`;
-  }
+
   const saldoMensal = parseFloat(prompt("Quantos reais por mês você pretende investir?"));
   const anos = parseInt(prompt("Quantidade de anos que você pretende investir?"));
 
@@ -48,6 +44,12 @@ async function investimentoSelic() {
 
   const rendeu = saldo - guardou;
 
-  document.getElementById("info").innerText = `${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
-  document.getElementById("resultado").innerText = `Começando com ${textoFinal} após ${anos} anos, você terá R$${saldo.toFixed(2).replace('.', ',')}, com um rendimento de R$${rendeu.toFixed(2).replace('.', ',')}.`;
+  document.getElementById("info").innerText = `Na data de ${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
+  
+  if (isNaN(saldoInicial) || saldoInicial <= 0) {
+    document.getElementById("resultado").innerText = `Começando sem saldo inicial guardando ${saldoMensal} por mês durante ${anos} anos, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} e rendido R$${parseFloat(rendeu).toFixed(2).replace('.', ',')}`;
+  } else {
+    document.getElementById("resultado").innerText = `Começando com R$${parseFloat(saldoInicial).toFixed(2).replace('.', ',')} guardando ${saldoMensal} por mês, durante ${anos} anos você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} e rendido R$${parseFloat(rendeu).toFixed(2).replace('.', ',')}`;
+
+  }
 }
