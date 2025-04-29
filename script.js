@@ -53,3 +53,36 @@ async function investimentoSelic() {
     document.getElementById("resultado").innerText = `Começando com R$${parseFloat(saldoInicial).toFixed(2).replace('.', ',')} guardando R$${saldoMensal} por mês, durante ${anos} anos você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
   }
 }
+
+window.addEventListener('scroll', function() {
+  const div = document.getElementById('sobre');
+  const rect = div.getBoundingClientRect();
+  
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    div.classList.add('visible');
+  } else {
+    div.classList.remove('visible');
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const div = document.getElementById('projetos');
+  const rect = div.getBoundingClientRect();
+  
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    div.classList.add('visible');
+  } else {
+    div.classList.remove('visible');
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const div = document.getElementById('contato');
+  const rect = div.getBoundingClientRect();
+  
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    div.classList.add('visible');
+  } else {
+    div.classList.remove('visible');
+  }
+});
