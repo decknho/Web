@@ -54,35 +54,3 @@ async function investimentoSelic() {
   }
 }
 
-window.addEventListener('scroll', function() {
-  const div = document.getElementById('sobre');
-  const rect = div.getBoundingClientRect();
-  
-  if (rect.top < window.innerHeight && rect.bottom >= 0) {
-    div.classList.add('visible');
-  } else {
-    div.classList.remove('visible');
-  }
-});
-
-window.addEventListener('scroll', function() {
-  const div = document.getElementById('projetos');
-  const rect = div.getBoundingClientRect();
-  
-  if (rect.top < window.innerHeight && rect.bottom >= 0) {
-    div.classList.add('visible');
-  } else {
-    div.classList.remove('visible');
-  }
-});
-
-window.addEventListener('scroll', function() {
-  const div = document.getElementById('contato');
-  const rect = div.getBoundingClientRect();
-  
-  if (rect.top < window.innerHeight && rect.bottom >= 0) {
-    div.classList.add('visible');
-  } else {
-    div.classList.remove('visible');
-  }
-});
