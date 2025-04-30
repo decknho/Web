@@ -7,7 +7,7 @@ function gerar_senha() {
         senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
     }
 
-    document.getElementById("senha-gerada").innerText = "Senha gerada: " + senha;
+    document.getElementById("senhagerada").innerText = `Senha gerada | ` + senha + ` |`;
 }
 
 
