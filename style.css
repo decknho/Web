@@ -71,7 +71,9 @@ a {
     padding-top: 90px;
     padding-bottom: 10px;
     @media (max-width: 768px) {
-        padding-top: 160px;
+        padding-top: 150px;
+    } @media (max-width: 480px) {
+        padding-top: 150px;
     }
 }
 
@@ -99,16 +101,6 @@ a {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 768px) {
-        align-items: center;
-    } #headerLeft, #headerRight {
-        width: 100%;
-        text-align: center;
-    } #headerLeft {
-        margin-bottom: 10px;
-    } #headerRight {
-        margin-top: 10px;
-    }
 } #headerLeft, #headerRight {
     display: inline-block;
     vertical-align: middle;
