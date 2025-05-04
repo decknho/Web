@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div id="header">
+            <div id="headerLeft">
+                <h1 class="blue">Port<span class="white">Fólio</span></h1>
+            </div>
+            <div id="headerRight">
+                <nav>
+                    <a href="index.html">Início</a>
+                </nav>
+            </div>
+        </div>
+            <div class="selic">
+                <h1>Selic</h1>
+                <h2>O que é a Taxa SELIC?</h2>
+                <p>Ultima alteração: 03 de maio de 2025</p>
+                <p>A SELIC (Sistema Especial de Liquidação e Custódia) é a taxa básica de juros da economia brasileira. Ela é definida pelo Comitê de Política Monetária (Copom) do Banco Central e serve como referência para todas as demais taxas de juros praticadas no país, como as cobradas em empréstimos, financiamentos e aplicações financeiras.</p>
+                <h2>Para que serve a taxa SELIC?</h2>
+                <p>A SELIC é usada como ferramenta de controle da inflação. Quando a inflação está alta, o Banco Central pode aumentar a taxa SELIC para desestimular o consumo, encarecendo o crédito. Por outro lado, quando a economia está desaquecida, a taxa pode ser reduzida para incentivar o consumo e os investimentos.</p>
+                <h2>Como a SELIC influencia sua vida?</h2>
+                <p>Mesmo que você não perceba diretamente, a SELIC afeta:</p>
+                <ul>
+                    <li>Financiamentos e empréstimos: Juros mais altos ou mais baixos conforme a variação da SELIC.</li>
+                    <br>
+                    <li>Investimentos: Aplicações em renda fixa, como Tesouro Direto, CDBs e poupança, costumam render mais quando a SELIC está alta.</li>
+                    <br>
+                    <li>Inflação: A taxa ajuda a manter o poder de compra estável.</li>
+                </ul>
+            </div>
+            <div class="selic">
+                <h2>Calculadora de rendimentos</h2>
+                <br>
+                <p >Voce tem algum valor inicial? R$<input type="number" name="inicial"> (Se caso nao digite 0)</p>
+                <p> Qual a media mensal que ira depositar? <input type="number" name="mes"></p>
+                <p >Prentende investir por quantos anos? <input type="number" name="anos"></p>
+                <br>
+                <button onclick="investimentoSelic()">Calcular Investimento</button>
+                <br>
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; color: #00f7ff;">
+        <p>&copy; Todos os direitos reservados</p>
+    </div>
+</body>
+</html>

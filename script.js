@@ -25,11 +25,11 @@ async function investimentoSelic() {
   let mes_extenso = selic[selic.length - 1].data;
   mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
 
-  const saldoInicial = parseFloat(prompt("Voçê tem algum valor para começar? (Digite 0 para nenhum)"));
+  const saldoInicial = parseFloat(document.querySelector("input[name='inicial']").value) || 0;
 
-  const saldoMensal = parseFloat(prompt("Quantos reais por mês você pretende investir?"));
+  const saldoMensal = parseFloat(document.querySelector("input[name='mes']").value) || 0;
 
-  const anos = parseInt(prompt("Voçê pretende investir por quantos anos?"));
+  const anos = parseFloat(document.querySelector("input[name='anos']").value) || 0;
 
   let saldo = saldoInicial;
   let meses = anos * 12;

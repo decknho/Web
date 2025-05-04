@@ -31,10 +31,11 @@ h2 {
 nav {
     gap: 10px;
 } a {
+    text-decoration: none;
     color: #fff;
 } a:hover {
     color: #00f7ff;
-}
+} 
 
 #footer {
     color: #00f7ff;
@@ -114,4 +115,32 @@ nav {
     box-shadow: #111 1px 1px 4px;
 } .geradordesenha button:hover {
     background-color: #00aaff;
+}
+
+.selic {
+    background-color: #fff;
+    color: #111;
+    padding: 50px 5dvh;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: #111 4px 4px 50px;
+} .selic h1, h2 {
+    text-align: center;
+} .selic button {
+    background-color: #00f7ff;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    box-shadow: #111 1px 1px 4px;
+} .selic button:hover {
+    background-color: #00aaff;
+} .selic input {
+    border: none;
+    border-bottom: 1px solid #111;
+    width: 80px;
 }
