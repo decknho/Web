@@ -71,9 +71,9 @@ a {
     padding-top: 90px;
     padding-bottom: 10px;
     @media (max-width: 768px) {
-        padding-top: 150px;
+        padding-top: 90px;
     } @media (max-width: 480px) {
-        padding-top: 150px;
+        padding-top: 85px;
     }
 }
 
@@ -171,4 +171,47 @@ a {
     border: none;
     border-bottom: 1px solid #111;
     width: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+  
+@media (max-width: 768px) {
+.nav-links {
+    display: none;
+    flex-direction: column;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.menu-button {
+    display: block;
+}
+} .menu-button {
+    display: none; /* Esconde por padrão */
+}
+
+@media (max-width: 768px) {
+.menu-button {
+    background-color: #00f7ff;
+    position: absolute;
+    top: 25px; /* Descendo alguns pixels */
+    right: 10px;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    box-shadow: #111 1px 1px 4px;
+}
+
+.nav-links {
+    display: none; /* Opcional: esconde os links em telas pequenas */
+}
 }
