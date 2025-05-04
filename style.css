@@ -37,7 +37,20 @@ nav {
     justify-content: center;
 } @media (max-width: 768px) {
     nav {
+        flex-direction: column;
+        align-items: center;
+    } nav a {
+        margin: 5px 0;
+    } nav .menu-button {
+        display: block;
+    } nav .menu-button.active {
         display: none;
+    } nav .menu-button.inactive {
+        display: block;
+    } nav .menu-button.active:hover {
+        background-color: #00aaff;
+    } nav .menu-button.inactive:hover {
+        background-color: #00f7ff;
     }
 }
 
@@ -46,24 +59,7 @@ a {
     color: #fff;
 } a:hover {
     color: #00f7ff;
-} .menu-button {
-    display: none;
-} @media (max-width: 768px) {
-    .menu-button {
-        display: block;
-        background-color: #00f7ff;
-        color: #111;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-} .menu-button.active {
-    display: block;
-} .menu-button.inactive {
-    display: none;
 }
-
 #footer {
     color: #00f7ff;
     text-align:center;
@@ -74,6 +70,9 @@ a {
     max-width: 1500px;
     padding-top: 90px;
     padding-bottom: 10px;
+    @media (max-width: 768px) {
+        padding-top: 160px;
+    }
 }
 
 
@@ -100,6 +99,16 @@ a {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 768px) {
+        align-items: center;
+    } #headerLeft, #headerRight {
+        width: 100%;
+        text-align: center;
+    } #headerLeft {
+        margin-bottom: 10px;
+    } #headerRight {
+        margin-top: 10px;
+    }
 } #headerLeft, #headerRight {
     display: inline-block;
     vertical-align: middle;
