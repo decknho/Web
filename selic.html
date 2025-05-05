@@ -42,12 +42,13 @@
         <div class="selic">
             <h2>Calculadora de rendimentos</h2>
             <br>
-            <p >Voce tem algum valor inicial? R$<input type="number" name="inicial"> (Se caso nao digite 0)</p>
-            <p> Qual a media mensal que ira depositar? <input type="number" name="mes"></p>
-            <p >Prentende investir por quantos anos? <input type="number" name="anos"></p>
+            <p >Voce tem algum valor inicial? (Se caso nao digite 0) R$<input id="inicial" type="number" name="inicial" value="0"></p>
+            <p> Qual a media mensal que ira depositar? <input id="mes" type="number" name="mes" value="0"></p>
+            <p >Prentende investir por quantos anos? <input id="anos" type="number" name="anos" value="0"></p>
             <br>
             <button onclick="investimentoSelic()">Calcular Investimento</button>
             <br>
+            <p id="info"></p>
             <p id="resultado"></p>
         </div>
     </div>

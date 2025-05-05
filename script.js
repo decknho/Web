@@ -25,11 +25,23 @@ async function investimentoSelic() {
   let mes_extenso = selic[selic.length - 1].data;
   mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
 
-  const saldoInicial = parseFloat(document.querySelector("input[name='inicial']").value) || 0;
+  let inputInicial = document.getElementById("inicial");
+  const ssaldoInicial = inputInicial.value;
+  let mesElement = document.getElementById("mes")
+  const ssaldoMensal = mesElement.value;
+  let anosElement = document.getElementById("anos")
+  const aanos = anosElement.value;
+  const saldoInicial = parseFloat(ssaldoInicial);
+  const saldoMensal = parseFloat(ssaldoMensal);
+  const anos = parseInt(aanos);
+  if ((ssaldoMensal == "0") && (ssaldoInicial == "0") && (aanos == "0")) {
+    document.getElementById("resultado").innerText = `Preencha todos os campos corretamente!`;
+    return;
+  } else {
+    
+  }
 
-  const saldoMensal = parseFloat(document.querySelector("input[name='mes']").value) || 0;
-
-  const anos = parseFloat(document.querySelector("input[name='anos']").value) || 0;
+  
 
   let saldo = saldoInicial;
   let meses = anos * 12;
@@ -46,8 +58,7 @@ async function investimentoSelic() {
   const rendeu = saldo - guardou;
 
   document.getElementById("info").innerText = `Na data de ${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
-  
-  if (isNaN(saldoInicial) || saldoInicial <= 0) {
+  if ((isNaN(saldoInicial) || saldoInicial <= 0) && saldoMensal > 0 && anos > 0) {
     document.getElementById("resultado").innerText = `Começando sem saldo inicial guardando R$${saldoMensal} por mês durante ${anos} anos, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
   } else {
     document.getElementById("resultado").innerText = `Começando com R$${parseFloat(saldoInicial).toFixed(2).replace('.', ',')} guardando R$${saldoMensal} por mês, durante ${anos} anos você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
