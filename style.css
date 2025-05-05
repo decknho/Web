@@ -75,7 +75,7 @@ a {
 .main {
     align-items: center;
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 1143px;
     padding-top: 90px;
     padding-bottom: 10px;
     @media (max-width: 768px) {
