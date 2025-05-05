@@ -34,7 +34,7 @@ async function investimentoSelic() {
   const saldoInicial = parseFloat(ssaldoInicial);
   const saldoMensal = parseFloat(ssaldoMensal);
   const anos = parseInt(aanos);
-  if ((ssaldoMensal == "0") && (ssaldoInicial == "0") && (aanos == "0")) {
+  if ((ssaldoMensal <= "0") && (ssaldoInicial <= "0") && (aanos <= "0")) {
     document.getElementById("resultado").innerText = `Preencha todos os campos corretamente!`;
     return;
   } else {
@@ -61,7 +61,7 @@ async function investimentoSelic() {
   if ((isNaN(saldoInicial) || saldoInicial <= 0) && saldoMensal > 0 && anos > 0) {
     document.getElementById("resultado").innerText = `Começando sem saldo inicial guardando R$${saldoMensal} por mês durante ${anos} anos, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
   } else if ((isNaN(saldoInicial) || saldoInicial <= 0) && (isNaN(saldoMensal) || saldoMensal <= 0) && anos > 0){
-    document.getElementById("resultado").innerText = `Independente do de quantos anos você colocar, você não terá nada se os valores forem zero!`;
+    document.getElementById("resultado").innerText = `Independente do de quantos anos você colocar, você não terá nada se os valores não forem colocados corretamente!`;
   } else {
     document.getElementById("resultado").innerText = `Começando com R$${parseFloat(saldoInicial).toFixed(2).replace('.', ',')} guardando R$${saldoMensal} por mês, durante ${anos} anos você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
   }
