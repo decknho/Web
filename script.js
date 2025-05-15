@@ -25,12 +25,9 @@ async function investimentoSelic() {
   let mes_extenso = selic[selic.length - 1].data;
   mes_extenso = mes_extenso.slice(3, 5); // Pega o mês do formato DD/MM/YYYY
 
-  let inputInicial = document.getElementById("inicial");
-  const ssaldoInicial = inputInicial.value;
-  let mesElement = document.getElementById("mes")
-  const ssaldoMensal = mesElement.value;
-  let anosElement = document.getElementById("anos")
-  const aanos = anosElement.value;
+  const ssaldoInicial = document.getElementById("inicial").value;
+  const ssaldoMensal = document.getElementById("mes").value;
+  const aanos = document.getElementById("anos").value;
   const saldoInicial = parseFloat(ssaldoInicial);
   const saldoMensal = parseFloat(ssaldoMensal);
   const anos = parseInt(aanos);
@@ -41,19 +38,15 @@ async function investimentoSelic() {
   let saldo = saldoInicial;
   let meses = anos * 12;
   const porcentagemSelicMes = parseFloat(selic[selic.length - 1].valor) / 12;
-  let contadorDeMes = 2;
+  let contadorDeMes = 0;
   const guardou = saldo + saldoMensal * meses;
 
-  if (anos == 1 && meses > 0 && saldoMensal > 0) {
-    saldo = saldoMensal
-  } else {
-    while (meses !== 1) {
-      saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
-      contadorDeMes++;
-      meses--;
-    }
+  while (meses !== 0) {
+    saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
+    contadorDeMes++;
+    meses--;
   }
-    
+
   const rendeu = saldo - guardou;
   if (anos == 1) {
     if ((isNaN(saldoInicial) || saldoInicial <= 0) && saldoMensal > 0 && anos > 0) {
