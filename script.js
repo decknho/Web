@@ -54,10 +54,7 @@ async function investimentoSelic() {
       document.getElementById("resultado").innerText = `Começando sem saldo inicial guardando R$${saldoMensal} por mês durante ${anos} ano, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
     } else if ((isNaN(saldoInicial) || saldoInicial <= 0) && (isNaN(saldoMensal) || saldoMensal <= 0) && anos > 0){
       document.getElementById("resultado").innerText = `Independente do de quantos ano você colocar, você não terá nada se os valores anteriores forem zero!`;
-    } else if (isNaN(anos) || anos <= 0 && saldoInicial > 0 && saldoMensal > 0) {
-      document.getElementById("resultado").innerText = `Preencha todos os campos corretamente!`;
     } else if (saldoInicial > 0 && isNaN(saldoMensal) || saldoMensal <= 0 && anos > 0) {
-      document.getElementById("info").innerText = `Na data de ${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
       document.getElementById("resultado").innerText = `Começando com R$${parseFloat(saldoInicial).toFixed(2).replace('.', ',')} sem guardar nada mensalmente em ${anos} ano, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
     } else {
       document.getElementById("info").innerText = `Na data de ${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
@@ -69,7 +66,7 @@ async function investimentoSelic() {
       document.getElementById("resultado").innerText = `Começando sem saldo inicial guardando R$${saldoMensal} por mês durante ${anos} anos, você terá R$${parseFloat(saldo).toFixed(2).replace('.', ',')} (tendo guardado R$${parseFloat(guardou).toFixed(2).replace('.', ',')} mais os juros de R$${parseFloat(rendeu).toFixed(2).replace('.', ',')})`;
     } else if ((isNaN(saldoInicial) || saldoInicial <= 0) && (isNaN(saldoMensal) || saldoMensal <= 0) && anos > 0){
       document.getElementById("resultado").innerText = `Independente do de quantos anos você colocar, você não terá nada se os valores anteriores forem zero!`;
-    } else if (isNaN(anos) || anos <= 0 && saldoInicial > 0 && saldoMensal > 0) {
+    } else if (isNaN(anos) || anos <= 0 && saldoInicial > 0 && saldoMensal < 0) {
       document.getElementById("resultado").innerText = `Preencha todos os campos corretamente!`;
     } else if (saldoInicial > 0 && isNaN(saldoMensal) || saldoMensal <= 0 && anos > 0) {
       document.getElementById("info").innerText = `Na data de ${selic[selic.length - 1].data} | O valor do selic de ${mes[mes_extenso]} está em ${selic[selic.length - 1].valor}%`;
