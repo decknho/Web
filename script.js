@@ -44,12 +44,16 @@ async function investimentoSelic() {
   let contadorDeMes = 2;
   const guardou = saldo + saldoMensal * meses;
 
-  while (meses !== 1) {
-    saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
-    contadorDeMes++;
-    meses--;
+  if (anos == 1 && meses > 0 && saldoMensal > 0) {
+    saldo = saldoMensal
+  } else {
+    while (meses !== 1) {
+      saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
+      contadorDeMes++;
+      meses--;
+    }
   }
-
+    
   const rendeu = saldo - guardou;
   if (anos == 1) {
     if ((isNaN(saldoInicial) || saldoInicial <= 0) && saldoMensal > 0 && anos > 0) {
