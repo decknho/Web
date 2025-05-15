@@ -37,12 +37,7 @@ async function investimentoSelic() {
   if ((ssaldoMensal <= "0") && (ssaldoInicial <= "0") && (aanos <= "0")) {
     document.getElementById("resultado").innerText = `Preencha todos os campos corretamente!`;
     return;
-  } else {
-    
   }
-
-  
-
   let saldo = saldoInicial;
   let meses = anos * 12;
   const porcentagemSelicMes = parseFloat(selic[selic.length - 1].valor) / 12;
