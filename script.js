@@ -42,7 +42,7 @@ async function investimentoSelic() {
   const guardou = saldo + saldoMensal * meses;
 
   while (meses !== 0) {
-    saldo = saldo + saldoMensal + (saldo / 100 * porcentagemSelicMes);
+    saldo = saldo + saldoMensal + (porcentagemSelicMes / 100 * saldo);
     contadorDeMes++;
     meses--;
   }
